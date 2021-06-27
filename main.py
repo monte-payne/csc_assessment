@@ -22,7 +22,7 @@ class QuizStarter:
 
     #Picture 
     self.picture_image = Image.open("Sports.jpeg")
-    self.picture_image = self.picture_image.resize((200, 200), Image.ANTIALIAS)
+    self.picture_image = self.picture_image.resize((500, 200), Image.ANTIALIAS)
     self.picture_image = ImageTk.PhotoImage(self.picture_image)
 
     self.image_label= Label(self.quiz_frame, image=self.picture_image)
@@ -31,7 +31,7 @@ class QuizStarter:
 
 
 
-#Starting point program#
+#************Starting point program************#
 if __name__ == "__main__":
   root = Tk()
   root.title("Sports")
