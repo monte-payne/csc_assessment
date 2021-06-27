@@ -1,8 +1,15 @@
 from tkinter import*
 from PIL import ImageTk, Image
 
+global questions_answers
 names_list = []
+asked = []
+score=0
 
+questions_answers = {
+ 1: ["Who is the youngest player to score 10,000 points in the NBA", 'Kobe Bryant','Michael Jordan','Steph Curry','LeBron James', '21',4],
+
+}
 class QuizStarter:
   def __init__(self, parent):
     background_color="Yellow"
