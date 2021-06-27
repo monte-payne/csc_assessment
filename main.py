@@ -131,6 +131,37 @@ class Quiz:
     self.rb3.config(text=questions_answers[qnum][3])
     self.rb4.config(text=questions_answers[qnum][4])
 
+    def test_progress(self):
+      global score
+      scr_label=self.score_label
+      choice=self.var1.get()
+      if len(asked)>6:
+        if choice == questions_answers[qnum][6]:  
+          score +=1
+          scr_label.configure(text="Correct")
+          self.quiz_instance.config(text="CONFIRM")
+          self.endscreen()
+        else:
+            score+=0
+            scr_label.configure(text="The correct answer was " + questions_answers[qnum][4]) 
+            self.quiz_instance.config(text="CONFIRM")
+            self.endscreen()
+      else:
+         if choice == 0:
+             scr_label.configure(text="Please pick an answer before advancing")
+             choice=self.var1.get()
+         else:
+           if choice == questions_answers[qnum][6]:#If user picks right answer
+              score +=1
+              scr_label.configure(text="Correct")
+              self.quiz_instance.config(text="CONFIRM")
+              self.questions_setup()
+           else:
+               score+=0
+               scr_label.configure(text="The correct answer was " + questions_answers[qnum][4])
+               self.quiz_instance.config(text="CONFIRM")
+               self.questions_setup()
+
  
 
 if __name__ == "__main__":
