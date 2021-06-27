@@ -122,6 +122,15 @@ class Quiz:
     self.rb4 = Radiobutton(self.quiz_frame, text=questions_answers[qnum][4], font=("Helvetica","12"), bg=background_color, value=4, padx=10, pady=10, variable = self.var1, indicator = 1, background = "light grey")
     self.rb4.grid(row=4, pady=5)
 
+  def questions_setup(self):
+    randomiser()
+    self.var1.set(0)
+    self.question_label.config(text=questions_answers[qnum][0])
+    self.rb1.config(text=questions_answers[qnum][1])
+    self.rb2.config(text=questions_answers[qnum][2])
+    self.rb3.config(text=questions_answers[qnum][3])
+    self.rb4.config(text=questions_answers[qnum][4])
+
  
 
 if __name__ == "__main__":
