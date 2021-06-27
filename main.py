@@ -5,7 +5,7 @@ class QuizStarter:
   def __init__(self, parent):
     background_color="Yellow" 
     #frame set up
-    self.quiz_frame = Frame(parent, bg = background_color, padx=125, pady=125)
+    self.quiz_frame = Frame(parent, bg = background_color, padx=10, pady=10)
     self.quiz_frame.grid()
 
     #Label widget for heading
