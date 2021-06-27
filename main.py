@@ -51,6 +51,15 @@ class NameEnter:
     #Name Enter
     self.entry_box=Entry(self.quiz_frame)
     self.entry_box.grid(row=1, pady=5, padx=5)
+
+    self.continue_button = Button (self.quiz_frame, text = "CONTINUE", bg="steelblue", command=self.name_collection)
+    self.continue_button.grid(row=4, pady=5, padx=5)
+
+  def name_collection(self):
+    name = self.entry_box.get()
+    names_list.append(name)
+    print(names_list)
+    self.quiz_frame.destroy()
  
 
 if __name__ == "__main__":
