@@ -3,11 +3,16 @@ from PIL import ImageTk, Image
 
 global questions_answers
 names_list = []
-asked = []
-score=0
+
 
 questions_answers = {
  1: ["Who is the youngest player to score 10,000 points in the NBA", 'Kobe Bryant','Michael Jordan','Steph Curry','LeBron James', '21',4],
+ 2: ["What is Usain Bolt's world record time?", '10.03','9.21','9.43','9.58', '9.58',4],
+ 3: ["The olympic are held every how many years?", '5 Years', '2 Years', '3 Years', '4 Years', '4 Years',4],
+ 4: ["In the NFL how much points are a touchdown worth?", '5 points', '7 points', '8 points', '6 points', '6 points',4],
+ 5: ["What team holds the longest winning streak in NBA history?", 'Chicago Bulls', 'Milwaukee Bucks', 'Dallas Mavericks', 'Los Angeles Lakers',  'Los Angeles Lakers',4],
+ 6: ["How many rings are there on an olympic flag?", '6', '7', '3', '5', '5',4],
+ 7: ["Who is the president of the UFC?", 'Joe Rogan', 'Jon Jones', 'Michael Bisping', 'Dana White', 'Dana White',4]
 
 }
 class QuizStarter:
