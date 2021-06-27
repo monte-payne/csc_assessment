@@ -15,6 +15,15 @@ questions_answers = {
  7: ["Who is the president of the UFC?", 'Joe Rogan', 'Jon Jones', 'Michael Bisping', 'Dana White', 'Dana White',4]
 
 }
+
+def randomiser():
+  global qnum
+  qnum = random.randint(1,7)
+  if qnum not in asked:
+    asked.append(qnum)
+  elif qnum in asked:
+    randomiser()
+
 class QuizStarter:
   def __init__(self, parent):
     background_color="Yellow"
@@ -73,7 +82,7 @@ class NameEnter:
     print(names_list)
     self.quiz_frame.destroy()
  
-
+randomiser
 if __name__ == "__main__":
   root = Tk()
   root.title("Sports")
