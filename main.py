@@ -81,8 +81,49 @@ class NameEnter:
     names_list.append(name)
     print(names_list)
     self.quiz_frame.destroy()
+
+class Quiz:
+  def __init__(self, parent):
+    
+    background_color="yellow"
+    self.quiz_frame = Frame(parent, bg = background_color, padx=50, pady=50)
+    self.quiz_frame.grid()
+
+    #continue Button
+    self.quiz_instance = Button(self.quiz_frame, text="CONFIRM", bg="steelblue", command=self.test_progress)
+    self.quiz_instance.grid(row=8, pady=5) 
+
+    #score label to show score
+    self.score_label = Label(self.quiz_frame,font=("Tw Cen MT", "16"), bg=background_color)
+    self.score_label.grid(row=9) 
+
+    randomiser()
+
+    #questions
+    self.question_label = Label(self.quiz_frame, text=questions_answers[qnum][0], font=("Tw Cen MT","14"),bg=background_color)
+    self.question_label.grid(row=0, padx=10, pady=10)
+
+    #holds value of ratio buttons
+    self.var1=IntVar()
+
+#radio button 1
+    self.rb1 = Radiobutton(self.quiz_frame, text=questions_answers[qnum][1], font=("Helvetica","12"), bg=background_color, value=1, padx=10, pady=10, variable = self.var1, indicator = 1, background = "light grey")
+    self.rb1.grid(row=1, pady=5)
+
+#radio button 2
+    self.rb2 = Radiobutton(self.quiz_frame, text=questions_answers[qnum][2], font=("Helvetica","12"), bg=background_color, value=2, padx=10, pady=10, variable = self.var1, indicator = 1, background = "light grey")
+    self.rb2.grid(row=2, pady=5)
+
+#radio button 3
+    self.rb3 = Radiobutton(self.quiz_frame, text=questions_answers[qnum][3], font=("Helvetica","12"), bg=background_color, value=3, padx=10, pady=10, variable = self.var1, indicator = 1, background = "light grey")
+    self.rb3.grid(row=3, pady=5)
+
+#radio button 4
+    self.rb4 = Radiobutton(self.quiz_frame, text=questions_answers[qnum][4], font=("Helvetica","12"), bg=background_color, value=4, padx=10, pady=10, variable = self.var1, indicator = 1, background = "light grey")
+    self.rb4.grid(row=4, pady=5)
+
  
-randomiser
+
 if __name__ == "__main__":
   root = Tk()
   root.title("Sports")
